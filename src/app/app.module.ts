@@ -7,13 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
 import {FormsModule} from '@angular/forms';
+import { JefeComponent } from './jefe/jefe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    AdminComponent
+    AdminComponent,
+    JefeComponent
   ],
   imports: [
     BrowserModule,

@@ -17,8 +17,8 @@ export class AuthService {
 
   private users: User[] = [
     { username: 'admin', password: 'admin123', role: 'admin' },
-    { username: 'user1', password: 'user123', role: 'user' },
-    { username: 'user2', password: 'user456', role: 'user' },
+    { username: 'jefe', password: 'jefe123', role: 'jefe' },
+    { username: 'user', password: 'user123', role: 'user' },
   ];
 
   constructor(private router: Router) { }
@@ -33,7 +33,17 @@ export class AuthService {
       this.currentUser = user;
 
       // Redirigir según el rol
-      this.router.navigate([user.role === 'admin' ? '/admin' : '/dashboard']);
+
+      if (user.role === 'admin'){
+        this.router.navigate(['/admin'])
+      }
+      if (user.role === 'jefe'){
+        this.router.navigate(['/jefe'])
+      }
+      if (user.role === 'usuario'){
+        this.router.navigate(['/usuario'])
+      }
+      //this.router.navigate([user.role === 'admin' ? '/admin' : '/dashboard']);
       return true;
     }
     return false;
