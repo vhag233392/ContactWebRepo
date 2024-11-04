@@ -1,0 +1,34 @@
+<!-- crear-sala.component.html -->
+<form [formGroup]="salaForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="id">Descripción:</label>
+    <input type="number" id="id" formControlName="id" required>
+  </div>
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" formControlName="nombre" required>
+    <div *ngIf="salaForm.get('nombre')?.invalid && salaForm.get('nombre')?.touched">
+      Nombre es requerido.
+    </div>
+  </div>
+
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" formControlName="descripcion"></textarea>
+  </div>
+
+  <div>
+    <label for="capacidad">Capacidad:</label>
+    <input type="number" id="capacidad" formControlName="capacidad" required>
+    <div *ngIf="salaForm.get('capacidad')?.invalid && salaForm.get('capacidad')?.touched">
+      Capacidad es requerida y debe ser mayor que 0.
+    </div>
+  </div>
+
+  <div>
+    <label for="lider_proyecto">Líder de Proyecto:</label>
+    <input id="lider_proyecto" formControlName="lider_proyecto">
+  </div>
+
+  <button type="submit" [disabled]="salaForm.invalid">Crear Sala</button>
+</form>
