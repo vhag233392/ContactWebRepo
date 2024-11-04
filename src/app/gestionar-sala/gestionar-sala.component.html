@@ -1,21 +1,39 @@
-<div>
-  <h2>Gestionar Sala</h2>
+<div class="p-6 bg-gray-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold text-center text-gray-800 mb-4">Gestionar Sala</h2>
 
-  <label for="idSala">ID de la Sala:</label>
-  <input type="number" [(ngModel)]="idSala" id="idSala" placeholder="Ingresa el ID" />
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+    <label for="idSala" class="text-gray-700 font-semibold">ID de la Sala:</label>
+    <input
+      type="number"
+      [(ngModel)]="idSala"
+      id="idSala"
+      placeholder="Ingresa el ID"
+      class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
 
-  <button (click)="buscarSala()">Buscar Sala</button>
-
-  <div *ngIf="sala">
-    <h3>Detalles de la Sala</h3>
-    <p><strong>ID:</strong> {{ sala.id }}</p>
-    <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
-    <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
-    <p><strong>Capacidad:</strong> {{ sala.capacidad }}</p>
-    <p><strong>Líder de Proyecto:</strong> {{ sala.lider_proyecto }}</p>
-
-    <button (click)="eliminarSala()">Eliminar Sala</button>
+    <button
+      (click)="buscarSala()"
+      class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300"
+    >
+      Buscar Sala
+    </button>
   </div>
 
-  <p>{{ mensaje }}</p>
+  <div *ngIf="sala" class="bg-white p-6 rounded-lg shadow-md">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Detalles de la Sala</h3>
+    <p class="text-gray-700"><strong>ID:</strong> {{ sala.id }}</p>
+    <p class="text-gray-700"><strong>Nombre:</strong> {{ sala.nombre }}</p>
+    <p class="text-gray-700"><strong>Descripción:</strong> {{ sala.descripcion }}</p>
+    <p class="text-gray-700"><strong>Capacidad:</strong> {{ sala.capacidad }}</p>
+    <p class="text-gray-700"><strong>Líder de Proyecto:</strong> {{ sala.lider_proyecto }}</p>
+
+    <button
+      (click)="eliminarSala()"
+      class="mt-4 px-6 py-2 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 transition duration-300"
+    >
+      Eliminar Sala
+    </button>
+  </div>
+
+  <p class="mt-4 text-center text-gray-700">{{ mensaje }}</p>
 </div>

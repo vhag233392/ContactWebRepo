@@ -1,34 +1,66 @@
 <!-- crear-sala.component.html -->
-<form [formGroup]="salaForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="id">id:</label>
-    <input type="number" id="id" formControlName="id" required>
+<form [formGroup]="salaForm" (ngSubmit)="onSubmit()" class="p-6 bg-gray-100 rounded-lg shadow-md">
+  <div class="mb-4">
+    <label for="id" class="text-gray-700 font-semibold">ID:</label>
+    <input
+      type="number"
+      id="id"
+      formControlName="id"
+      required
+      class="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
   </div>
-  <div>
-    <label for="nombre">Nombre:</label>
-    <input id="nombre" formControlName="nombre" required>
-    <div *ngIf="salaForm.get('nombre')?.invalid && salaForm.get('nombre')?.touched">
+
+  <div class="mb-4">
+    <label for="nombre" class="text-gray-700 font-semibold">Nombre:</label>
+    <input
+      id="nombre"
+      formControlName="nombre"
+      required
+      class="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <div *ngIf="salaForm.get('nombre')?.invalid && salaForm.get('nombre')?.touched" class="text-red-600">
       Nombre es requerido.
     </div>
   </div>
 
-  <div>
-    <label for="descripcion">Personas:</label>
-    <textarea id="descripcion" formControlName="descripcion"></textarea>
+  <div class="mb-4">
+    <label for="descripcion" class="text-gray-700 font-semibold">Personas:</label>
+    <textarea
+      id="descripcion"
+      formControlName="descripcion"
+      class="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+    ></textarea>
   </div>
 
-  <div>
-    <label for="capacidad">Capacidad:</label>
-    <input type="number" id="capacidad" formControlName="capacidad" required>
-    <div *ngIf="salaForm.get('capacidad')?.invalid && salaForm.get('capacidad')?.touched">
+  <div class="mb-4">
+    <label for="capacidad" class="text-gray-700 font-semibold">Capacidad:</label>
+    <input
+      type="number"
+      id="capacidad"
+      formControlName="capacidad"
+      required
+      class="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+    <div *ngIf="salaForm.get('capacidad')?.invalid && salaForm.get('capacidad')?.touched" class="text-red-600">
       Capacidad es requerida y debe ser mayor que 0.
     </div>
   </div>
 
-  <div>
-    <label for="lider_proyecto">Líder de Proyecto:</label>
-    <input id="lider_proyecto" formControlName="lider_proyecto">
+  <div class="mb-4">
+    <label for="lider_proyecto" class="text-gray-700 font-semibold">Líder de Proyecto:</label>
+    <input
+      id="lider_proyecto"
+      formControlName="lider_proyecto"
+      class="border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
   </div>
 
-  <button type="submit" [disabled]="salaForm.invalid">Crear Sala</button>
+  <button
+    type="submit"
+    [disabled]="salaForm.invalid"
+    class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300"
+  >
+    Crear Sala
+  </button>
 </form>

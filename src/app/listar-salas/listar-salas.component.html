@@ -1,9 +1,10 @@
 <!-- listar-salas.component.html -->
-<div *ngFor="let sala of salas">
-  <p>id: {{ sala.id }}</p>
-  <p>Nombre: {{ sala.nombre }}</p>
-  <p>Personas: {{ sala.descripcion }}</p>
-  <p>Capacidad: {{ sala.capacidad }}</p>
-  <p>Líder de proyecto: {{ sala.lider_proyecto }}</p>
-  <hr>
+<div *ngFor="let sala of salas" class="mb-6 p-4 bg-white rounded-lg shadow-md">
+  <p class="text-gray-800 font-semibold"><strong>ID:</strong> {{ sala.id }}</p>
+  <p class="text-gray-800"><strong>Nombre:</strong> {{ sala.nombre }}</p>
+  <p class="text-gray-800"><strong>Personas:</strong> {{ sala.descripcion }}</p>
+  <p class="text-gray-800"><strong>Capacidad:</strong> {{ sala.capacidad }}</p>
+  <p class="text-gray-800"><strong>Líder de Proyecto:</strong> {{ sala.lider_proyecto }}</p>
+  <hr class="my-4 border-gray-300" />
 </div>
+
