@@ -1,0 +1,21 @@
+<div>
+  <h2>Mostrar Sala</h2>
+  <div>
+    <label for="id">ID de la Sala:</label>
+    <input id="id" [(ngModel)]="id" type="number" required>
+    <button (click)="buscarSala()">Buscar Sala</button>
+  </div>
+
+  <div *ngIf="sala">
+    <h3>Detalles de la Sala</h3>
+    <p><strong>ID:</strong> {{ sala.id }}</p>
+    <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
+    <p><strong>Personas:</strong> {{ sala.descripcion }}</p>
+    <p><strong>Capacidad:</strong> {{ sala.capacidad }}</p>
+    <p><strong>Líder del Proyecto:</strong> {{ sala.lider_proyecto }}</p>
+  </div>
+
+  <div *ngIf="!sala && id">
+    <p>No se encontraron detalles para la sala con ID {{ id }}.</p>
+  </div>
+</div>

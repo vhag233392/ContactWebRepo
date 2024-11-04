@@ -26,6 +26,11 @@ export class SalaService {
     return this.http.delete<void>(`${this.apiUrl}${id}`);
   }
 
+  editarSala(id: number, sala: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}${id}`, sala);
+  }
+
+
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'An error occurred';
     if (error.error instanceof ErrorEvent) {

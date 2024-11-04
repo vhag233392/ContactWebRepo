@@ -1,0 +1,34 @@
+<div>
+    <h2>Editar Sala</h2>
+    <div>
+        <label for="id">ID de la Sala:</label>
+        <input id="id" [(ngModel)]="id" type="number" required>
+        <button (click)="buscarSala()">Buscar Sala</button>
+    </div>
+
+    <div *ngIf="salaEditando">
+        <form (ngSubmit)="actualizarSala()">
+            <div>
+                <label for="name">Nombre:</label>
+                <input id="name" [(ngModel)]="salaEditando.nombre" name="name" required>
+            </div>
+            <div>
+                <label for="description">Personas:</label>
+                <textarea id="description" [(ngModel)]="salaEditando.descripcion" name="description"></textarea>
+            </div>
+            <div>
+                <label for="capacity">Capacidad:</label>
+                <input id="capacity" [(ngModel)]="salaEditando.capacidad" name="capacity" type="number" required>
+            </div>
+            <div>
+                <label for="lider_proyecto">Líder del Proyecto:</label>
+                <input id="lider_proyecto" [(ngModel)]="salaEditando.lider_proyecto" name="lider_proyecto" required>
+            </div>
+            <button type="submit">Actualizar Sala</button>
+        </form>
+    </div>
+
+    <div *ngIf="errorMessage" style="color: red;">
+        {{ errorMessage }}
+    </div>
+</div>

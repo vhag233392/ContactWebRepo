@@ -15,6 +15,11 @@ import { CrearSalaComponent } from './crear-sala/crear-sala.component';
 import {SalaService} from './sala.service';
 import { GestionarSalaComponent } from './gestionar-sala/gestionar-sala.component';
 
+import { EditarSalaComponent } from './editar-sala/editar-sala.component';
+import { MostrarSalaComponent } from './mostrar-sala/mostrar-sala.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +30,9 @@ import { GestionarSalaComponent } from './gestionar-sala/gestionar-sala.componen
     ListarSalasComponent,
     CrearSalaComponent,
     GestionarSalaComponent,
+    EditarSalaComponent,
+    MostrarSalaComponent,
+
   ],
   imports: [
     BrowserModule,

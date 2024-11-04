@@ -1,4 +1,25 @@
 <!-- src/app/dashboard/dashboard.component.html -->
 <h2>Dashboard</h2>
 <p>Welcome, regular user!</p>
+<div>
+  <h1>Gestión de Salas</h1>
+  <app-mostrar-sala
+    [id]="idSala"
+    (salaEncontrada)="onSalaEncontrada($event)"
+    (error)="onError($event)">
+  </app-mostrar-sala>
+
+  <div *ngIf="sala ">
+    <h3>Detalles de la Sala</h3>
+    <p><strong>ID:</strong> {{ sala.id }}</p>
+    <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
+    <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
+    <p><strong>Capacidad:</strong> {{ sala.capacidad }}</p>
+    <p><strong>Líder del Proyecto:</strong> {{ sala.lider_proyecto }}</p>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>
 <button (click)="logout()">Logout</button>

@@ -18,7 +18,7 @@ export class AuthService {
   private users: User[] = [
     { username: 'admin', password: 'admin123', role: 'admin' },
     { username: 'jefe', password: 'jefe123', role: 'jefe' },
-    { username: 'user', password: 'user123', role: 'user' },
+    { username: 'user1', password: 'user123', role: 'user' },
   ];
 
   constructor(private router: Router) { }
@@ -40,8 +40,8 @@ export class AuthService {
       if (user.role === 'jefe'){
         this.router.navigate(['/jefe'])
       }
-      if (user.role === 'usuario'){
-        this.router.navigate(['/usuario'])
+      if (user.role === 'user'){
+        this.router.navigate(['/dashboard'])
       }
       //this.router.navigate([user.role === 'admin' ? '/admin' : '/dashboard']);
       return true;
