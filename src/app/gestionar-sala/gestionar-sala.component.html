@@ -1,0 +1,21 @@
+<div>
+  <h2>Gestionar Sala</h2>
+
+  <label for="idSala">ID de la Sala:</label>
+  <input type="number" [(ngModel)]="idSala" id="idSala" placeholder="Ingresa el ID" />
+
+  <button (click)="buscarSala()">Buscar Sala</button>
+
+  <div *ngIf="sala">
+    <h3>Detalles de la Sala</h3>
+    <p><strong>ID:</strong> {{ sala.id }}</p>
+    <p><strong>Nombre:</strong> {{ sala.nombre }}</p>
+    <p><strong>Descripción:</strong> {{ sala.descripcion }}</p>
+    <p><strong>Capacidad:</strong> {{ sala.capacidad }}</p>
+    <p><strong>Líder de Proyecto:</strong> {{ sala.lider_proyecto }}</p>
+
+    <button (click)="eliminarSala()">Eliminar Sala</button>
+  </div>
+
+  <p>{{ mensaje }}</p>
+</div>

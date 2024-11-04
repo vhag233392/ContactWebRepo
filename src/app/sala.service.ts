@@ -18,6 +18,14 @@ export class SalaService {
       );
   }
 
+  obtenerSalaPorId(id: number): Observable<Sala> {
+    return this.http.get<Sala>(`${this.apiUrl}${id}`);
+  }
+
+  eliminarSala(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}${id}`);
+  }
+
   private handleError(error: HttpErrorResponse) {
     let errorMessage = 'An error occurred';
     if (error.error instanceof ErrorEvent) {

@@ -12,6 +12,9 @@ import { JefeComponent } from './jefe/jefe.component';
 import { ListarSalasComponent } from './listar-salas/listar-salas.component';
 import { CrearSalaComponent } from './crear-sala/crear-sala.component';
 
+import {SalaService} from './sala.service';
+import { GestionarSalaComponent } from './gestionar-sala/gestionar-sala.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,8 @@ import { CrearSalaComponent } from './crear-sala/crear-sala.component';
     AdminComponent,
     JefeComponent,
     ListarSalasComponent,
-    CrearSalaComponent
+    CrearSalaComponent,
+    GestionarSalaComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ import { CrearSalaComponent } from './crear-sala/crear-sala.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SalaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
